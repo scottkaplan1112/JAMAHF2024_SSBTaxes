@@ -1,8 +1,8 @@
 # Kaplan et al. (JAMA Health Forum, 2024)
-This repository provides R code allowing a user with access to the Nielsen Retail Scanner Data provided by the Kilts Center for Marketing at the Chicago Booth School of Business to replicate the analysis and findings in this paper: 
+This repository provides R code allowing a user with access to the Nielsen Retail Scanner Data provided by the Kilts Center for Marketing at the Chicago Booth School of Business (paid subscription) to replicate the analysis and findings in this paper: 
 Kaplan S, White JS, Madsen KA, Basu S, Villas-Boas SB, Schillinger D. Evaluation of Changes in Prices and Purchases Following Implementation of Sugar-Sweetened Beverage Taxes Across the US. *JAMA Health Forum*. 2024;5(1):e234737. doi:10.1001/jamahealthforum.2023.4737
 
-The document is split up into four primary sections of files: data preparation for analysis, analysis, summary statistics, and miscellaneous. The data preparation for analysis section numbers files in the order they should be used. The other sections include notes on file ordering, when relevant. Each file is accompanied by a short description of i) the primary objective of the file and ii) any important data or analysis outputs from the file.
+The document is split up into four primary sections of files: data preparation for analysis, analysis, summary statistics, and miscellaneous. The data preparation for analysis section numbers files in the order they should be used. The other sections include notes on file ordering, when relevant. Each file is accompanied by a short description of i) the primary objective of the file and ii) any important data or analysis outputs from the file. **Please note that replicating any findings associated with the Nielsen Retail Scanner Data requires access to the Kilts Center for Marketing Nielsen retail scanner data repository (a paid subscription).**
 
 I.	Data Preparation for Analysis
 
