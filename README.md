@@ -7,9 +7,8 @@ The document is split up into four primary sections of files: data preparation f
 I.	Data Preparation for Analysis
 
 1.	1_Nielsen_Cleaning_Aggregating_RawData.R
-  a.	This file brings in raw Nielsen data containing beverage products and organizes it by year (from 2012-2020). **It requires access to the Kilts Center for Marketing Nielsen retail scanner data repository (a paid subscription).**
-
-  b.	The final outputs from this file are yearly-level files of raw Nielsen data titled “Nielsen_YEAR_Aggregated_FirstPass.csv.”
+   a.	This file brings in raw Nielsen data containing beverage products and organizes it by year (from 2012-2020). **It requires access to the Kilts Center for Marketing Nielsen retail scanner data repository (a paid subscription).**
+   b.	The final outputs from this file are yearly-level files of raw Nielsen data titled “Nielsen_YEAR_Aggregated_FirstPass.csv.”
 3.	2_Nielsen_UniqueUPC_Generation.R
   a.	This file takes all of the raw data from 1) and outputs a list of unique UPCs from the collected Nielsen data. 
   b.	The final output from this file is a single file with a list of all unique UPCs in the raw Nielsen data, titled “Nielsen_Aggregate_UniqueUPCs.csv.”
