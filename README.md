@@ -16,7 +16,7 @@ I.	Data Preparation for Analysis
      1.	This file outputs relevant Census data by 3-digit zip code (for both unweighted and population weighted analyses).
      2.	The final output from this file is “CensusData_Combined_Final_3DigitZip.csv” (there is also a separate file outputted and used for the population-weighted robustness analyses found in the Supplementary Online Material in eFigures 8 and 9).
 4.	4_merge_nielsen_upcs_with_nutrition_SK.do
-     1.	This file merges the set of unique Nielsen UPCs generated in 2) with nutrition data from handcoded sources and Label Insight. It requires the datasets “LabelInsight_short_Dec2020.dta” and “nutrition_by_upc.dta.” The handcoded nutrition data ("nutrition_by_upc.dta") is provided in the "Data" subfolder of the Github repository, but the data from Label Insight (“LabelInsight_short_Dec2020.dta”) must be obtained from them directly. 
+     1.	This file merges the set of unique Nielsen UPCs generated in 2) with nutrition data from handcoded sources and Label Insight. It requires the datasets “LabelInsight_short_Dec2020.dta” and “nutrition_by_upc.dta.” **The handcoded nutrition data ("nutrition_by_upc.dta") is provided in the "Data" subfolder of the Github repository, but the data from Label Insight (“LabelInsight_short_Dec2020.dta”) must be obtained from them directly.**
      2.	The final outputs from this file are the unique Nielsen UPCs dataset (“upc_list_nielsen.dta”) and Nielsen UPCs with matches (or lack thereof) to nutrition data (“Nielsen_upcs_with_nutrition_short_SK.dta”).
 5.	5_ObtainMatchedUPCs_fromNielsenRaw.R
      1.	This file takes the matched data from 4) and outputs i) a list of Nielsen UPCs that were matched to nutrition data and ii) the raw Nielsen data (by year) that was matched.
