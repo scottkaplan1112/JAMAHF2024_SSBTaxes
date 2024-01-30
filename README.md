@@ -9,31 +9,31 @@ I.	Data Preparation for Analysis
 1.	1_Nielsen_Cleaning_Aggregating_RawData.R
   a.	This file brings in raw Nielsen data containing beverage products and organizes it by year (from 2012-2020). **It requires access to the Kilts Center for Marketing Nielsen retail scanner data repository (a paid subscription).**
   b.	The final outputs from this file are yearly-level files of raw Nielsen data titled “Nielsen_YEAR_Aggregated_FirstPass.csv.”
-2.	2_Nielsen_UniqueUPC_Generation.R
+3.	2_Nielsen_UniqueUPC_Generation.R
   a.	This file takes all of the raw data from 1) and outputs a list of unique UPCs from the collected Nielsen data. 
   b.	The final output from this file is a single file with a list of all unique UPCs in the raw Nielsen data, titled “Nielsen_Aggregate_UniqueUPCs.csv.”
-3.	3_CensusData_Extraction.R
+4.	3_CensusData_Extraction.R
   a.	This file outputs relevant Census data by 3-digit zip code (for both unweighted and population weighted analyses).
   b.	The final output from this file is “CensusData_Combined_Final_3DigitZip.csv” (there is also a separate file outputted and used for the population-weighted robustness analyses found in the Supplementary Online Material in eFigures 8 and 9).
-4.	4_merge_nielsen_upcs_with_nutrition_SK.do
+5.	4_merge_nielsen_upcs_with_nutrition_SK.do
   a.	This file merges the set of unique Nielsen UPCs generated in 2) with nutrition data from handcoded sources and Label Insights. It requires the datasets “LabelInsight_short_Dec2020.dta” and “nutrition_by_upc.dta.”
   b.	The final outputs from this file are the unique Nielsen UPCs dataset (“upc_list_nielsen.dta”) and Nielsen UPCs with matches (or lack thereof) to nutrition data (“Nielsen_upcs_with_nutrition_short_SK.dta”).
-5.	5_ObtainMatchedUPCs_fromNielsenRaw.R
+6.	5_ObtainMatchedUPCs_fromNielsenRaw.R
   a.	This file takes the matched data from 4) and outputs i) a list of Nielsen UPCs that were matched to nutrition data and ii) the raw Nielsen data (by year) that was matched.
   b.	The final outputs from this file are “Matched UPC Characteristics_LI_and_Handcoded.csv” and “Nielsen_YEAR_MatchedData_NoCharacteristics_NoStores.csv” for each year.
-6.	6_Nielsen_Stores_and_ProdCharacteristics.R
+7.	6_Nielsen_Stores_and_ProdCharacteristics.R
   a.	This file takes additional product characteristics files provided by Nielsen and matches it with the file generated in 5) (“Matched UPC Characteristics_LI_and_Handcoded.csv”). It also combines information about stores provided by Nielsen and Census data generated        in 3).
   b.	The final outputs from this file are a couple of different files of matched product characteristics (“Matched UPC Characteristics_NielsenProductFiles.csv” and “Matched UPC Characteristics_ALL.csv”) as well as a file combining both store and Census characteristics        (“Store_Census_Combined.csv”)
-7.	7_Nielsen_Filtering_justSSBs.R
+8.	7_Nielsen_Filtering_justSSBs.R
   a.	This file takes the “Matched UPC Characteristics_ALL.csv” file outputted in 6) and filters the raw yearly Nielsen data to just UPCs that were matched and denoted SSBs. 
   b.	The final output from this file are yearly raw Nielsen data files that is just SSB UPCs (that have been matched), titled “NielsenMovement_YEAR_SSBs.csv.”
-8.	8_DID_and_Event_Study_DataPrep.R
+9.	8_DID_and_Event_Study_DataPrep.R
   a.	This file takes matched UPC product characteristics data and the store/Census data, along with the data outputs from 7), and does some work to modify it to be in a format useful for a difference-in-differences/event study estimation.
   b.	The final outputs from this file are yearly level Nielsen data files at the month level (“NielsenMovement_YEAR_SSBs_MonthLevel.csv”).
-9.	9_SyntheticControl_DataPrep.R
+10.	9_SyntheticControl_DataPrep.R
   a.	This file takes the data outputs from 8) and modifies them further to be ready for a synthetic control estimation. 
   b.	The final outputs from this file are yearly level Nielsen data files (titled “NielsenMovement_YEAR_SSBs_MonthLevel_SCEstimation.csv”).
-10.	10_SyntheticControl_DataPrep_ZipCodeLevel.R
+11.	10_SyntheticControl_DataPrep_ZipCodeLevel.R
   a.	This file takes all of the data outputted in 9) and aggregates it to the month-by-zip code level and combine it into a single dataset. 
   b.	There are two final outputs from this file, one dataset for volume sold (“NielsenMovement_AllMonths_withCensusData_ZipCode.csv”) and one for shelf prices (“NielsenMovement_AllMonths_withCensusData_ZipCode_Prices.csv”).
 
