@@ -27,9 +27,6 @@ memory.limit(size = 25000000)
 ##Setting the working directory for SSB Project
 setwd("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis")
 
-##ALL SYNTHETIC CONTROL FUNCTIONS IN THIS SOURCE FILE
-source("Code/SyntheticControl_Functions.R")
-
 ##Toggle to drop immediately bordering zip codes in synthetic control estimation
 DropBorderingZips <- 1
 
@@ -94,19 +91,6 @@ rm(MonthLevel_2019_2020)
 
 gc()
 
-# ##Removing currently taxed zip codes
-# NielsenMovement_All_months <- filter(NielsenMovement_All_months,
-#                                      store_zip3 != 946 & store_zip3 != 945 & #Oakland
-#                                        store_zip3 != 947 & #Berkeley
-#                                        store_zip3 != 200 & store_zip3 != 202 & #DC
-#                                        store_zip3 != 203 & store_zip3 != 204 & #DC
-#                                        store_zip3 != 205 & #DC
-#                                        store_zip3 != 803 & #Boulder
-#                                        store_zip3 != 190 & store_zip3 != 191 & #Philly
-#                                        store_zip3 != 192 & #Philly
-#                                        store_zip3 != 981 #Seattle
-# )
-
 ##Removing any row with an NA
 NielsenMovement_All_months <- NielsenMovement_All_months[complete.cases(NielsenMovement_All_months),]
 
@@ -124,7 +108,7 @@ Store_Census_Data <- fread("Processed Data/Final Nielsen Files/Store_Census_Comb
                                           fips_county_code = "character",
                                           dma_code = "character"))
 
-##Creating an SF indicator variable
+##Creating an SF indicator variable (was done just for descriptives)
 Store_Census_Data <- mutate(Store_Census_Data,
                             SF = ifelse(store_zip3 == "941", "SF", "Not SF"))
 
@@ -306,18 +290,6 @@ rm(MonthLevel_2019_2020)
 
 gc()
 
-# ##Removing currently taxed zip codes
-# NielsenMovement_All_months <- filter(NielsenMovement_All_months,
-#                                      store_zip3 != 946 & store_zip3 != 945 & #Oakland
-#                                        store_zip3 != 947 & #Berkeley
-#                                        store_zip3 != 200 & store_zip3 != 202 & #DC
-#                                        store_zip3 != 203 & store_zip3 != 204 & #DC
-#                                        store_zip3 != 205 & #DC
-#                                        store_zip3 != 803 & #Boulder
-#                                        store_zip3 != 190 & store_zip3 != 191 & #Philly
-#                                        store_zip3 != 192 & #Philly
-#                                        store_zip3 != 981 #Seattle
-# )
 
 ##Removing any row with an NA
 NielsenMovement_All_months <- NielsenMovement_All_months[complete.cases(NielsenMovement_All_months),]

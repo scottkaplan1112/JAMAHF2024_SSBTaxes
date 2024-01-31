@@ -36,20 +36,6 @@ SyntheticControl_DataPrep_Fun <- function(data){
   
   print("Filtering out any NA or 0 observations")
   
-  # ##Removing currently taxed zip codes
-  # data_name <- filter(data_name,
-  #                                      store_zip3 != 946 & store_zip3 != 945 & #Oakland
-  #                                        store_zip3 != 947 & #Berkeley
-  #                                        store_zip3 != 948 & #Albany
-  #                                        store_zip3 != 200 & store_zip3 != 202 & #DC
-  #                                        store_zip3 != 203 & store_zip3 != 204 & #DC
-  #                                        store_zip3 != 205 & #DC
-  #                                        store_zip3 != 803 & #Boulder
-  #                                        store_zip3 != 190 & store_zip3 != 191 & #Philly
-  #                                        store_zip3 != 192 & #Philly
-  #                                        store_zip3 != 981 #Seattle
-  # )
-  
   ##Removing any row with an NA
   data_name <- data_name[complete.cases(data_name),]
   

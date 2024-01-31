@@ -178,19 +178,6 @@ rm(Nielsen_RawData_2020)
 ######Combining unique UPC Files#####
 #####################################
 
-# UniqueUPCs_2015 <- fread("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Unique Nielsen UPCs/Nielsen_2015_UniqueUPCs.csv",
-#                          colClasses = c(upc = "character"))
-# UniqueUPCs_2016 <- fread("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Unique Nielsen UPCs/Nielsen_2016_UniqueUPCs.csv",
-#                          colClasses = c(upc = "character"))
-# UniqueUPCs_2017 <- fread("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Unique Nielsen UPCs/Nielsen_2017_UniqueUPCs.csv",
-#                          colClasses = c(upc = "character"))
-# UniqueUPCs_2018 <- fread("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Unique Nielsen UPCs/Nielsen_2018_UniqueUPCs.csv",
-#                          colClasses = c(upc = "character"))
-# UniqueUPCs_2019 <- fread("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Unique Nielsen UPCs/Nielsen_2019_UniqueUPCs.csv",
-#                          colClasses = c(upc = "character"))
-# UniqueUPCs_2020 <- fread("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Unique Nielsen UPCs/Nielsen_2020_UniqueUPCs.csv",
-#                          colClasses = c(upc = "character"))
-
 ##Aggregating the unique UPC files
 UniqueUPCs_Aggregate <- rbind(UniqueUPCs_2012, UniqueUPCs_2013, UniqueUPCs_2014, UniqueUPCs_2015, 
                               UniqueUPCs_2016, UniqueUPCs_2017, UniqueUPCs_2018, UniqueUPCs_2019, UniqueUPCs_2020)

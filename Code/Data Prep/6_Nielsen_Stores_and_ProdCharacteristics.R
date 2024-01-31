@@ -199,20 +199,6 @@ Products_2020 <- fread("products_extra_2020.tsv",
                                       use_code = "character",
                                       size2_code = "character"))
 
-# #rms data (DON'T BELIEVE THIS IS NECESSARY SINCE I HAVE EACH YEARLY PRODUCT FILE)
-# RMS_2015 <- fread("rms_versions_2015.tsv", 
-#                   colClasses = c(upc = "character", upc_ver_uc = "numeric", panel_year = "numeric"))
-# RMS_2016 <- fread("rms_versions_2016.tsv", 
-#                   colClasses = c(upc = "character", upc_ver_uc = "numeric", panel_year = "numeric"))
-# RMS_2017 <- fread("rms_versions_2017.tsv", 
-#                   colClasses = c(upc = "character", upc_ver_uc = "numeric", panel_year = "numeric"))
-# RMS_2018 <- fread("rms_versions_2018.tsv", 
-#                   colClasses = c(upc = "character", upc_ver_uc = "numeric", panel_year = "numeric"))
-# RMS_2019 <- fread("rms_versions_2019.tsv", 
-#                   colClasses = c(upc = "character", upc_ver_uc = "numeric", panel_year = "numeric"))
-# RMS_2020 <- fread("rms_versions_2020.tsv", 
-#                   colClasses = c(upc = "character", upc_ver_uc = "numeric", panel_year = "numeric"))
-
 
 ###################################
 #####Aggregating Product Files#####
@@ -220,20 +206,6 @@ Products_2020 <- fread("products_extra_2020.tsv",
 
 Products_Aggregated <- rbind(Products_2012, Products_2013, Products_2014, Products_2015, 
                              Products_2016, Products_2017, Products_2018, Products_2019, Products_2020)
-
-##(DON'T BELIEVE THIS IS NECESSARY SINCE I HAVE EACH YEARLY PRODUCT FILE)
-# RMS_Aggregated <- rbind(RMS_2015, RMS_2016, RMS_2017, RMS_2018, RMS_2019, RMS_2020)
-# 
-# ##Removing the "panel_year" column from the products data
-# Products_Aggregated_NoYear <- dplyr::select(Products_Aggregated, -panel_year)
-# 
-# ##Taking only unique rows based on upc code and upc version
-# Products_Aggregated_NoYear_Unique <- distinct(Products_Aggregated_NoYear, upc, upc_ver_uc, .keep_all = TRUE)
-# 
-# ##Combining the RMS data with the Products data
-# Products_RMS_Aggregated <- left_join(RMS_Aggregated, Products_Aggregated_NoYear_Unique, 
-#                                      by = c("upc" = "upc",
-#                                             "upc_ver_uc" = "upc_ver_uc"))
 
 
 

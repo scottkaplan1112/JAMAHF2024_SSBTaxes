@@ -6,8 +6,7 @@ library(dplyr)
 ################################################
 
 ##Setting the working directory for all data
-#setwd("S:/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Final Nielsen Files")
-setwd("C:/Users/skaplan/Backed Up Data/SSB Taxes")
+setwd("C:/Users/skaplan/Projects/SSB Taxes")
 
 ##Reading in the UPC Characteristics data
 UPC_Characteristics <- fread("Data/Matched UPC Characteristics_ALL.csv",

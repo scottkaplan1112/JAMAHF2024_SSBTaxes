@@ -15,15 +15,12 @@ MatchedUPCs <- read_dta("nielsen_upcs_with_nutrition_short_SK.dta")
 ##Obtaining just the UPCs that had a match to either the Label Insights OR Handcoded data
 MatchedUPCs <- filter(MatchedUPCs, merge_li == 3 | merge_handcoded == 3)
 
-
-######ADDED AFTER FIGURING OUT HOW THE MERGE_LI AND MERGE_HANDCODED WERE CODED (5/30/23)######
 ##Drop UPCs that had a match ONLY between the handcoded and Label Insight data but NOT the Nielsen data
 MatchedUPCs <- filter(MatchedUPCs, !(merge_li == 1 & merge_handcoded == 3))
 
-#############THIS INFORMATION FOR TOTAL UNIQUE SSB UPCS MATCHED ON FOR PAPER#############
+#############THIS INFORMATION FOR TOTAL UNIQUE SSB UPCS MATCHED ON FOR SUMMARY STAT IN JAMA HF 2024 PAPER#############
 SSBUPCs <- filter(MatchedUPCs, ssb == 1) 
 SSBUPCs_Number <- length(unique(SSBUPCs$upc10))
-
 
 ##From STATA file, there were 52,584 unique 10-digit upcs from Nielsen. Conversion rate is 18471/52584
 

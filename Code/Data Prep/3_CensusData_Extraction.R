@@ -54,7 +54,7 @@ v17_dec_sf1 <- load_variables(2010, "sf1", cache = TRUE)
 v17_dec_sf2 <- load_variables(2010, "sf2", cache = TRUE)
 
 
-###list of variables I need (from synthetic control analysis in other paper):
+###list of variables I need:
 
 #population size (2010) - P001001
 #median household income (2016) - B19013_001
@@ -140,9 +140,3 @@ CensusData_Combined_Final_3DigitZip_Population <- group_by(CensusData_Combined_F
 
 ##Output census data for population weighted estimates
 fwrite(CensusData_Combined_Final_3DigitZip_Population, "Data/CensusData_Combined_Final_3DigitZip_Population.csv")
-
-
-# #########FOR JUSTIN - AGE 18-64 NOTE##########
-# demographics_18to64 <- select(IRIDemographicData, zip, subhd0201_s23, subhd0201_s22)
-# write_dta(demographics_18to64, "D:/FacultyData/Kaplan/SSB Taxes/SF Synthetic Control Analysis/Processed Data/Census Data/demographics_18to64_forJustin.dta")
-

@@ -57,7 +57,7 @@ Store_Census_Data <- distinct(Store_Census_Data, store_code_uc, .keep_all = TRUE
 Store_Census_Data <- mutate(Store_Census_Data,
                             SF = ifelse(store_zip3 == "941", "SF", "Not SF"))
 
-##How many SF vs. non-SF stores?
+##How many SF vs. non-SF stores? (just a descriptive piece of information)
 SFStores <- filter(Store_Census_Data, store_zip3 == "941") %>% nrow
 NonSFStores <- filter(Store_Census_Data, store_zip3 != "941") %>% nrow
 

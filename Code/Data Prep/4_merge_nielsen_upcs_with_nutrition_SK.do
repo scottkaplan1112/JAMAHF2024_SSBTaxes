@@ -1,6 +1,6 @@
 * Merge Label Insight nutrition data with list of Nielsen beverage UPCs from Scott 
-* Author: Justin White
-* Last updated: December 8, 2020
+* Authors: Scott Kaplan and Justin White
+* Last updated: May 31, 2023
 
 
 // Set directories
@@ -504,35 +504,3 @@ replace size = size*16 if size_li == . & sizelab == "PT"
 
 
 	
-	
-/* 
-CODE BELOW IS NOT RIGHT
-
-* Prepare Label Insight data for merge
-***************************************
-
-* Data created by LabelInsight_Nov2020_merge.do
-
-use	"$dataI/nutrition_by_upc_LI_2015_19b.dta", clear
-*use	"$dataI/nutrition_by_upc_short_LI_2015_19b.dta", clear
-
-* Create 10-digit UPC
-gen prod=substr(upc_id,-5,.)
-gen vendor=substr(upc_id,-11,5)
-* combine to 10-digit upc
-gen upc10=vendor+prod
-
-duplicates list upc10 // check for duplicates
-duplicates tag upc10, gen(dup) // tag duplicates
-sort upc10 ssb 
-browse if dup == 1
-duplicates drop upc10, force // drop all but first occurrence of duplicate upc10
-
-* Keep subset of variables
-keep 	upc10 upc_id upc_nm cat subcat brand cals_per_serving tot_sugar added_sugar serving_size bev_type_new ssb3 size num_upc
-
-* Merge Nielsen and Label Insight data
-capture drop _merge
-merge 1:1 upc10 using "$temp/upc_list_nielsen.dta"
-
-*/
