@@ -560,36 +560,36 @@ Quantity_Melted <- mutate(Quantity_Melted, value_indexed = 100*(value-Min)/(Max-
 Prices_Melted <- mutate(Prices_Melted, value_indexed = 100*(value-Min)/(Max-Min))
 
 
-#######FOR JUSTIN#######
+#######RESHAPING AND OUTPUTTING IMPORTANT INFO#######
 
 ##Reshaping data to be able to calculate difference
-Quantity_Treated_forJustin <- filter(Quantity_Melted, Status == "Treated")
-Quantity_Synthetic_forJustin <- filter(Quantity_Melted, Status == "Synthetic")
-Quantity_forJustin <- left_join(Quantity_Treated_forJustin, Quantity_Synthetic_forJustin,
+Quantity_Treated_Output <- filter(Quantity_Melted, Status == "Treated")
+Quantity_Synthetic_Output <- filter(Quantity_Melted, Status == "Synthetic")
+Quantity_Output <- left_join(Quantity_Treated_Output, Quantity_Synthetic_Output,
                              by = c("store_zip3" = "store_zip3",
                                     "variable" = "variable"))
 
-Quantity_forJustin <- dplyr::select(Quantity_forJustin, -c(Status.x, Status.y, Min.x, Max.x, Min.y, Max.y))
-colnames(Quantity_forJustin) <- c("store_zip3", "variable", "treated_rawval", 
+Quantity_Output <- dplyr::select(Quantity_Output, -c(Status.x, Status.y, Min.x, Max.x, Min.y, Max.y))
+colnames(Quantity_Output) <- c("store_zip3", "variable", "treated_rawval", 
                                "treated_indexedval", "synthetic_rawval", "synthetic_indexedval")
 
-Prices_Treated_forJustin <- filter(Prices_Melted, Status == "Treated")
-Prices_Synthetic_forJustin <- filter(Prices_Melted, Status == "Synthetic")
-Prices_forJustin <- left_join(Prices_Treated_forJustin, Prices_Synthetic_forJustin,
+Prices_Treated_Output <- filter(Prices_Melted, Status == "Treated")
+Prices_Synthetic_Output <- filter(Prices_Melted, Status == "Synthetic")
+Prices_Output <- left_join(Prices_Treated_Output, Prices_Synthetic_Output,
                                 by = c("store_zip3" = "store_zip3",
                                        "variable" = "variable"))
 
-Prices_forJustin <- dplyr::select(Prices_forJustin, -c(Status.x, Status.y, Min.x, Max.x, Min.y, Max.y))
-colnames(Prices_forJustin) <- c("store_zip3", "variable", "treated_rawval", 
+Prices_Output <- dplyr::select(Prices_Output, -c(Status.x, Status.y, Min.x, Max.x, Min.y, Max.y))
+colnames(Prices_Output) <- c("store_zip3", "variable", "treated_rawval", 
                                   "treated_indexedval", "synthetic_rawval", "synthetic_indexedval")
 
-fwrite(Quantity_forJustin, "Data/Summary Stats Data/DumbbellData_Consumption.csv")
-fwrite(Prices_forJustin, "Data/Summary Stats Data/DumbbellData_Prices.csv")
+fwrite(Quantity_Output, "Data/Summary Stats Data/DumbbellData_Consumption.csv")
+fwrite(Prices_Output, "Data/Summary Stats Data/DumbbellData_Prices.csv")
 
 
 #########################
   
-Quantity_forJustin$Diff <- abs(Quantity_forJustin$treated_indexedval - Quantity_forJustin$synthetic_indexedval)
+Quantity_Output$Diff <- abs(Quantity_Output$treated_indexedval - Quantity_Output$synthetic_indexedval)
 
 #########################
 

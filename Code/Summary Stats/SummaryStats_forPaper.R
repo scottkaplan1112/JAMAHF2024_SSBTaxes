@@ -31,7 +31,7 @@ memory.limit(size = 25000000)
 #Ceto
 setwd("C:/Users/skaplan/Backed Up Data/SSB Taxes")
 
-##ALL SYNTHETIC CONTROL FUNCTIONS IN THIS SOURCE FILE
+##ALL SYNTHETIC CONTROL FUNCTIONS IN THESE SOURCE FILES
 source("Code/SyntheticControl_Functions.R")
 source("Code/augsynth_inference.R")
 
@@ -47,7 +47,7 @@ source("Code/augsynth_inference.R")
 # ##Toggle to 1 if running synthetic control analyses for immediate bordering zip codes
 # Border_Analysis <- 0
 
-##Drop Berkeley
+##Drop 947
 Drop_Berkeley <- 1
 
 ####################################################
@@ -84,13 +84,6 @@ NielsenMovement_AllMonths_withCensusData_ZipCode <- mutate(NielsenMovement_AllMo
                                                                               store_zip3 == "946" & time_to_treat_months_Oakland >= 0 |
                                                                               store_zip3 == "200" & time_to_treat_months_DC >= 0 |
                                                                               store_zip3 == "947" & time_to_treat_months_Berkeley >= 0, 1, 0))
-# treated_SF = ifelse(store_zip3 == "941" & time_to_treat_months_SanFrancisco >= 0, 1, 0),
-# treated_Seattle = ifelse(store_zip3 == "981" & time_to_treat_months_Seattle >= 0, 1, 0),
-# treated_Boulder = ifelse(store_zip3 == "803" & time_to_treat_months_Boulder >= 0, 1, 0),
-# treated_Philadelphia = ifelse(store_zip3 == "191" & time_to_treat_months_Philadelphia >= 0, 1, 0),
-# treated_Oakland = ifelse(store_zip3 == "946" & time_to_treat_months_Oakland >= 0, 1, 0),
-# treated_DC = ifelse(store_zip3 == "200" & time_to_treat_months_DC >= 0, 1, 0),
-# treated_Berkeley = ifelse(store_zip3 == "947" & time_to_treat_months_Berkeley >= 0, 1, 0))
 
 
 #creating the overall border, border groupings, and individual taxed city treated variables

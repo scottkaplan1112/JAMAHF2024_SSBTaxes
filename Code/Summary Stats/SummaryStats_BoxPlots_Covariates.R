@@ -452,7 +452,7 @@ BoxPlots_perc_urban
 
 ggsave("Figures/Summary Statistics/Covariate Box Plots/BoxPlots_perc_urban.png", width = 35, height = 18, units = "cm")
 
-
+#CombinedGraph
 CombinedGraph <- ggpubr::ggarrange(BoxPlots_num_housingunits, 
                                    BoxPlots_medHHincome, 
                                    BoxPlots_medage,
@@ -472,6 +472,5 @@ CombinedGraph <- ggpubr::ggarrange(BoxPlots_num_housingunits,
                                    #widths = c(8, 8, 8),
                                    ncol = 3, nrow = 4) 
                            
-#CombinedGraph
 
 ggsave("Figures/Summary Statistics/Covariate Box Plots/BoxPlots_Combined.png", width = 30, height = 45, units = "cm")
