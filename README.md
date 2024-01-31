@@ -53,7 +53,7 @@ III.	Summary Statistics
 1.	SummaryStats_forPaper.R
      1.	Outputs general summary statistics seen in Table 1. Requires data outputs from 10) in Data Preparation for Analysis section as well as the “CensusData_Combined_Final_3DigitZip.csv” and “Store_Census_Combined.csv" datasets.
 2.	SummaryStats_BoxPlots_Covariates.R
-     1.	This file produces the box plot figure seen in the Supplementary Online Information (eFigure 2). It requires the “CensusData_Combined_Final_3DigitZip.csv” as well as a data output from 1) in the Analysis section (titled “extraction_longdf_AllTaxed.csv”) in order to the 3-digit zip codes used in the primary analysis.
+     1.	This file produces the box plot figure seen in the Supplementary Online Information (eFigure 2). It requires the “CensusData_Combined_Final_3DigitZip.csv” as well as a data output from 1) in the Analysis section (titled “extraction_longdf_AllTaxed.csv”) in order to obtain the 3-digit zip codes used in the primary analysis.
 3.	SummaryStats_DumbbellPlot.R
      1.	Produces (a less nice version) of the dumbbell plots seen in Figure 1 in main text (for volume purchases) and eFigure 1 in supplementary info (for shelf prices). Data needed for figure creation is read in at the top of the file and includes outputs from 1) in the Analysis section as well as the “CensusData_Combined_Final_3DigitZip.csv” data output.
 4.	Population by Subjurisdictions.xlsx
