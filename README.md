@@ -55,7 +55,7 @@ III.	Summary Statistics
 2.	SummaryStats_BoxPlots_Covariates.R
      1.	This file produces the box plot figure seen in the Supplementary Online Information (eFigure 2). It requires the “CensusData_Combined_Final_3DigitZip.csv” as well as a data output from 1) in the Analysis section (titled “extraction_longdf_AllTaxed.csv”) in order to the 3-digit zip codes used in the primary analysis.
 3.	SummaryStats_DumbbellPlot.R
-     1.	Produces (a less nice version) of the dumbbell plots seen in Figure 1 in main text (for volume purchases) and eFigure 1 in supplementary info (for shelf prices). Data needed for figure creation is read in at the top of the file and includes outputs from 10) in           Data Preparation for Analysis section as well as the “CensusData_Combined_Final_3DigitZip.csv” data output.
+     1.	Produces (a less nice version) of the dumbbell plots seen in Figure 1 in main text (for volume purchases) and eFigure 1 in supplementary info (for shelf prices). Data needed for figure creation is read in at the top of the file and includes outputs from 1) in the Analysis section as well as the “CensusData_Combined_Final_3DigitZip.csv” data output.
 4.	Population by Subjurisdictions.xlsx
      1.	File to determine % of treated vs. untreated population within a 3-digit zip code (eTable 2 in Supplementary Online Information).
 5.	UPC Coverage.xlsx
